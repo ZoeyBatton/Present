@@ -16,14 +16,23 @@ Window.size = [700, 700]
 class FirstScreen(Screen):
     pass
 
+
+class SecondScreen(Screen):
+    pass
+
+class ThirdScreen(Screen):
+    pass  
+
 sm = ScreenManager()
 
 class PresentApp(MDApp):
     def build(self):
 
-        sm.add_widget(Builder.load_file('C:/Users/Batton_Zoey/Desktop/Present/Present App/present.kv'))
+        sm.add_widget(Builder.load_file('present.kv'))
 
         sm.add_widget(FirstScreen(name='first'))
+        sm.add_widget(SecondScreen(name='second'))
+        sm.add_widget(ThirdScreen(name='third'))
 
         return sm
 
