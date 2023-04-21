@@ -16,12 +16,14 @@ Window.size = [700, 700]
 class FirstScreen(Screen):
     pass
 
-
 class SecondScreen(Screen):
     pass
 
 class ThirdScreen(Screen):
     pass  
+
+class FourthScreen(Screen):
+    pass
 
 sm = ScreenManager()
 
@@ -33,6 +35,7 @@ class PresentApp(MDApp):
         sm.add_widget(FirstScreen(name='first'))
         sm.add_widget(SecondScreen(name='second'))
         sm.add_widget(ThirdScreen(name='third'))
+        sm.add_widget(FourthScreen(name='fourth'))
 
         return sm
 

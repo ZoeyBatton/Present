@@ -9,18 +9,22 @@ FirstScreen:
         # md_bg_color: 0, 0, 1, 1
         FitImage:
             source: 'download.jpg'
+        Image:
+            source: 'Kivy_logo.png'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            size_hint: (0.2, 0.2)
 
         #  light blue #ADD8E6
         MDLabel:
             text: 'Presenting:'
             # size_hint: (0.9, 0.9)
             font_size: '50sp'
-            pos_hint: {'center_x': 0.85, 'center_y': 0.9}
+            pos_hint: {'center_x': 0.85, 'center_y': 0.75}
         MDLabel:
             text: 'Python + Kivy (KivyMD)'
             # size_hint: (0.9, 0.9)
             font_size: '50sp'
-            pos_hint: {'center_x': 0.65, 'center_y': 0.6}
+            pos_hint: {'center_x': 0.65, 'center_y': 0.5}
         MDRoundFlatIconButton:
             
             icon: 'next.png'
@@ -40,18 +44,25 @@ FirstScreen:
             source: 'download.jpg'
 
         MDLabel:
-            text: '''Kivy is an open source framwork that runs                               through Python to create mobile                                 Andriod and IOS applications.'''
+            text: '''Kivy is an open source framwork that runs through                               Python to create mobile Andriod and IOS                                 applications.'''
             font_size: '30sp'
-            pos_hint: {'center_x': 0.53, 'center_y': 0.9}
+            pos_hint: {'center_x': 0.53, 'center_y': 0.7}
 
 
         Image:
             source: 'kivy_logo.png'
-            pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
             size_hint: (0.18, 0.18)
 
         MDLabel:
-            text: 'Kivy uses both the langauges Python and kvlang to allow an '
+            text: 'KivyMD'
+            font_size: '30sp'
+            pos_hint: {'center_x': 0.53, 'center_y': 0.5}
+
+        MDLabel:
+            text: 'KivyMD (Kivy material Design) is an extension of Kivy that allows for more advanced Widgets and menu options for App Development.'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.53, 'center_y': 0.4}
 
         MDRoundFlatIconButton:
 
@@ -83,6 +94,17 @@ FirstScreen:
     MDFloatLayout:
         FitImage:
             source: 'download.jpg'
+        MDRoundFlatIconButton:
+
+            icon: 'next.png'
+            text: 'Next'
+            text_color: 'black'
+            line_color: 'black'
+            icon_color: 'black'
+            pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'fourth'
 
         MDRoundFlatIconButton:
             icon: 'back.png'
@@ -95,58 +117,222 @@ FirstScreen:
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'second'
 
-        MDLabel:
-            text: 'Different Button Types'
-            font_size: '40sp'
-            pos_hint: {'center_x': 0.7, 'center_y': 0.8}
-        MDLabel:
-            text: 'Kivy:'
+        Label:
+            text: 'Initializing a KV file in Python'
+            font_size: '35sp'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+        Label: 
+            text: 'Set up an "App" class in your Python File with a Build method'
             font_size: '20sp'
-            pos_hint: {'center_x': 0.55, 'center_y': 0.7}
-        MDLabel:
-            text: 'KivyMD:'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        Label: 
+            text: 'sm = ScreenManager()'
             font_size: '20sp'
-            pos_hint: {'center_x': 1, 'center_y': 0.7}
-        MDLabel:
-            text: 'Button: function'
-            font_size: '15sp'
-            pos_hint: {'center_x': 0.55, 'center_y': 0.6}
-        Button:
-            text: 'Kivy'
-            font_size: '15sp'
-            size_hint: (0.1, 0.05)
-            pos_hint: {'center_x': 0.15, 'center_y': 0.55}
-        MDLabel:
-            text: 'MDIconButton:       MDFloatingActionButton:'
-            font_size: '15sp'
-            pos_hint: {'center_x': 1, 'center_y': 0.6}
-        MDIconButton:
-            icon: "language-python"
-            pos_hint: {"center_x": .55, "center_y": .55}
-        MDFloatingActionButton:
-            icon: "language-python"
-            pos_hint: {"center_x": .75, "center_y": .55}
-            md_bg_color: 'blue'
-        MDLabel:
-            text: 'MDFlatButton:       MDRaisedButton:'
-            font_size: '15sp'
-            pos_hint: {'center_x': 1, 'center_y': 0.45}
-        MDFlatButton:
-            text: 'KivyMD'
-            pos_hint: {"center_x": .55, "center_y": .35}
-        MDRaisedButton:
-            text: 'kivyMD'
-            pos_hint: {"center_x": .75, "center_y": .35}
-        MDLabel:
-            text: 'MDRoundFlatButton:       MDRoundFlatIconButton:'
-            font_size: '15sp'
-            pos_hint: {'center_x': 1, 'center_y': 0.25}
-        MDRoundFlatButton:
-            text: "Python + KivyMD"
-            text_color: "black"
-            pos_hint: {"center_x": .6, "center_y": .15}
-        MDRoundFlatIconButton:
-            text: "Python + KivyMD"
-            icon: "language-python"
-            text_color: "black"
-            pos_hint: {"center_x": .85, "center_y": .15}
+            font_name: 'Comic'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.15, 'center_y': 0.75}
+        Label: 
+            text: 'class ExampleApp(App) OR class ExampleApp(MDApp) use MDApp when using KivyMD'
+            font_size: '20sp'
+            color: 0, 0, 0, 1
+            font_name: 'Comic'
+            pos_hint: {'center_x': 0.2, 'center_y': 0.7}
+        Label: 
+            text: '  def build(self):'
+            font_size: '20sp'
+            font_name: 'Comic'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.2, 'center_y': 0.65}
+        Label: 
+            text: '                          sm.add_widget(Builder.load_file(filename.kv))'
+            font_size: '20sp'
+            font_name: 'Comic'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.3, 'center_y': 0.6}
+        Label: 
+            text: 'return sm'
+            font_size: '20sp'
+            font_name: 'Comic'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.18, 'center_y': 0.55}
+        Label:
+            text: 'Run Class'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.1, 'center_y': 0.45}
+            font_size: '20sp'
+        Label:
+            text: 'if __name__ == "__main__"'
+            color: 0, 0, 0, 1
+            font_name: 'Comic'
+            pos_hint: {'center_x': 0.2, 'center_y': 0.4}
+            font_size: '20sp'
+        Label:
+            text: 'ExampleApp().run()'
+            color: 0, 0, 0, 1
+            font_name: 'Comic'
+            pos_hint: {'center_x': 0.2, 'center_y': 0.35}
+            font_size: '20sp'
+        Label:
+            text: 'Set up your KV File with #: plus your version of Kivy/KivyMD'
+            color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.4, 'center_y': 0.25}
+            font_size: '20sp'
+        Label:
+            text: '#:kivy 2.1.0'
+            color: 0, 0, 0, 1
+            font_name: 'Comic'
+            pos_hint: {'center_x': 0.1, 'center_y': 0.2}
+            font_size: '20sp'
+        
+
+
+<FourthScreen>:
+    name: 'fourth'
+    # MDFloatLayout:
+    #     FitImage:
+    #         source: 'download.jpg'
+
+    #     MDRoundFlatIconButton:
+    #         icon: 'back.png'
+    #         text: 'Back'
+    #         text_color: 'black'
+    #         line_color: 'black'
+    #         icon_color: 'black'
+    #         pos_hint: {'center_x': 0.1, 'center_y': 0.1}
+    #         on_release:
+    #             root.manager.transition.direction = 'right'
+    #             root.manager.current = 'third'
+
+    #     MDLabel:
+    #         text: 'Different Button Types'
+    #         font_size: '40sp'
+    #         pos_hint: {'center_x': 0.7, 'center_y': 0.8}
+    #     MDLabel:
+    #         text: 'Kivy:'
+    #         font_size: '20sp'
+    #         pos_hint: {'center_x': 0.55, 'center_y': 0.7}
+    #     MDLabel:
+    #         text: 'KivyMD:'
+    #         font_size: '20sp'
+    #         pos_hint: {'center_x': 1, 'center_y': 0.7}
+    #     MDLabel:
+    #         text: 'Button: function'
+    #         font_size: '15sp'
+    #         pos_hint: {'center_x': 0.55, 'center_y': 0.6}
+    #     Button:
+    #         text: 'Kivy'
+    #         font_size: '15sp'
+    #         size_hint: (0.1, 0.05)
+    #         pos_hint: {'center_x': 0.15, 'center_y': 0.55}
+    #     MDLabel:
+    #         text: 'MDIconButton:       MDFloatingActionButton:'
+    #         font_size: '15sp'
+    #         pos_hint: {'center_x': 1, 'center_y': 0.6}
+    #     MDIconButton:
+    #         icon: "language-python"
+    #         pos_hint: {"center_x": .55, "center_y": .55}
+    #     MDFloatingActionButton:
+    #         icon: "language-python"
+    #         pos_hint: {"center_x": .75, "center_y": .55}
+    #         md_bg_color: 'blue'
+    #     MDLabel:
+    #         text: 'MDFlatButton:       MDRaisedButton:'
+    #         font_size: '15sp'
+    #         pos_hint: {'center_x': 1, 'center_y': 0.45}
+    #     MDFlatButton:
+    #         text: 'KivyMD'
+    #         pos_hint: {"center_x": .55, "center_y": .35}
+    #     MDRaisedButton:
+    #         text: 'kivyMD'
+    #         pos_hint: {"center_x": .75, "center_y": .35}
+    #     MDLabel:
+    #         text: 'MDRoundFlatButton:       MDRoundFlatIconButton:'
+    #         font_size: '15sp'
+    #         pos_hint: {'center_x': 1, 'center_y': 0.25}
+    #     MDRoundFlatButton:
+    #         text: "Python + KivyMD"
+    #         text_color: "black"
+    #         pos_hint: {"center_x": .6, "center_y": .15}
+    #     MDRoundFlatIconButton:
+    #         text: "Python + KivyMD"
+    #         icon: "language-python"
+    #         text_color: "black"
+    #         pos_hint: {"center_x": .85, "center_y": .15}
+
+        # MDRoundFlatIconButton:
+
+        #     icon: 'next.png'
+        #     text: 'Next'
+        #     text_color: 'black'
+        #     line_color: 'black'
+        #     icon_color: 'black'
+        #     pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+        #     on_release:
+        #         root.manager.transition.direction = 'left'
+        #         root.manager.current = 'fourth'
+    # FitImage:
+    #     source: 'downlaod.jpg'
+    # BoxLayout:
+    #     orientation: 'vertical'
+        
+    #     MDTopAppBar:
+    #         title: 'Demo Application'
+    #         left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+    #         elevation: 10
+
+        # Widget:
+    
+    NavigationLayout:
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            NavigationDrawerIconButton:
+                text: 'Buttons'
+                on_release:
+                    screen_manager.current = "button"
+            NavigationDrawerIconButton:
+                text: 'Text Inputs'
+                on_release:
+                    screen_manager.current = "input"
+        ScreenManager:
+            id: screen_manager
+            Screen:
+                name: 'button'
+                MDLabel:
+                    text: 'Buttons'
+            Screen:
+                name: 'input'
+                MDLabel:
+                    text: 'Text Inputs'
+            
+        # BoxLayout:
+        #     orientation: 'vertical'
+        #     spacing: '8dp'
+        #     padding: '8dp'
+
+        #     Image:
+        #         source: 'Kivy_logo.png'
+
+            # ScrollView:
+            #     MDList:
+            #         OneLineIconListItem:
+            #             text: 'Weather'
+            #             IconLeftWidget:
+            #                 icon: '74.png'
+            #         OneLineIconListItem:
+            #             text: 'Warnings'
+            #             IconLeftWidget:
+            #                 icon: '248810.png'
+            #         OneLineIconListItem:
+            #             text: 'Log Out'
+            #             on_press:
+            #                 root.manager.transition.direction = 'right'
+            #                 root.manager.current = 'third'
+            #             IconLeftWidget:
+            #                 icon: 'logout'
+            #                 on_press:
+            #                     root.manager.transition.direction = 'right'
+            #                     root.manager.current = 'third'
+    # 
