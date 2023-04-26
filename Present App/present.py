@@ -25,6 +25,9 @@ class ThirdScreen(Screen):
 class FourthScreen(Screen):
     pass
 
+class FifthScreen(Screen):
+    pass
+
 sm = ScreenManager()
 
 class PresentApp(MDApp):
@@ -36,6 +39,7 @@ class PresentApp(MDApp):
         sm.add_widget(SecondScreen(name='second'))
         sm.add_widget(ThirdScreen(name='third'))
         sm.add_widget(FourthScreen(name='fourth'))
+        sm.add_widget(FifthScreen(name='fifth'))
 
         return sm
 
