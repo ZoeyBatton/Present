@@ -17,7 +17,6 @@ Window.size = [700, 700]
 
 #300, 450
 
-
 class FirstScreen(Screen):
     pass
 
@@ -39,28 +38,35 @@ class SixthScreen(Screen):
 class SeventhScreen(Screen):
     pass
 
+class EigthScreen(Screen):
+    pass
+
+class FLayout(Screen):
+    pass
+
+class Blayout(Screen):
+    pass
+
+class End(Screen):
+    pass
+
 sm = ScreenManager()
 
 class PresentApp(MDApp):
     def build(self):
 
-        # sm.add_widget(Builder.load_file('present.kv'))
-
-
         sm.add_widget(FirstScreen(name='first'))
         sm.add_widget(SecondScreen(name='second'))
         sm.add_widget(ThirdScreen(name='third'))
+        sm.add_widget(FLayout(name='flayout'))
+        sm.add_widget(Blayout(name='blayout'))
         sm.add_widget(FourthScreen(name='fourth'))
         sm.add_widget(FifthScreen(name='fifth'))
         sm.add_widget(SixthScreen(name='sixth'))
         sm.add_widget(SeventhScreen(name='seventh'))
-
-        
-
-        
+        sm.add_widget(EigthScreen(name='eigth'))
+        sm.add_widget(End(name='end'))
         return sm
 
 if __name__ == '__main__':
     PresentApp().run()
-
-# PresentApp().run()
