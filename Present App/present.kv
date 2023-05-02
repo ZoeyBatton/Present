@@ -76,7 +76,7 @@ FirstScreen:
             pos_hint: {'center_x': 0.9, 'center_y': 0.1}
             on_release:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'fourth'
+                root.manager.current = 'third'
 
         MDRoundFlatIconButton:
             icon: 'back.png'
@@ -106,7 +106,7 @@ FirstScreen:
             pos_hint: {'center_x': 0.9, 'center_y': 0.1}
             on_release:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'fourth'
+                root.manager.current = 'flayout'
 
         MDRoundFlatIconButton:
             icon: 'back.png'
@@ -188,6 +188,69 @@ FirstScreen:
             pos_hint: {'center_x': 0.1, 'center_y': 0.2}
             font_size: '20sp'
 
+<FLayout>:
+    name: 'flayout'
+    FitImage:
+        source: 'download.jpg'
+    MDFloatLayout:
+        MDLabel:
+            text: 'FloatLayout (MDFloatLayout)'
+            font_size: '35sp'
+            pos_hint: {'center_x': 0.65, 'center_y': 0.9}
+        MDLabel:
+            text: 'This Layout'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.6, 'center_y': 0.8}
+        MDLabel:
+            text: 'allows you to'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.1, 'center_y': 0.75}
+        MDLabel:
+            text: 'place widgets anywhere'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.7, 'center_y': 0.6}
+        MDLabel:
+            text: 'on the screen'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.99, 'center_y': 0.45}
+        MDLabel:
+            text: 'between 0 and 1'
+            font_size: '25sp'
+            pos_hint: {'center_x': 0.9, 'center_y': 0.3}
+
+        MDFlatButton:
+            text: 'Button 1'
+            size: (0.5, 0.5)
+            font_size: '20sp'
+            pos_hint: {'center_x': 0.2, 'center_y': 0.45}
+        MDFlatButton:
+            text: 'Button 2'
+            font_size: '20sp'
+            pos_hint: {'center_x': 0.8, 'center_y': 0.8}
+            size: (0.5, 0.5)
+
+        MDRoundFlatIconButton:
+
+            icon: 'next.png'
+            text: 'Next'
+            text_color: 'black'
+            line_color: 'black'
+            icon_color: 'black'
+            pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'fourth'
+
+        MDRoundFlatIconButton:
+            icon: 'back.png'
+            text: 'Back'
+            text_color: 'black'
+            line_color: 'black'
+            icon_color: 'black'
+            pos_hint: {'center_x': 0.1, 'center_y': 0.1}
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'third'
 
 <FourthScreen>:
     name: 'fourth'
@@ -276,7 +339,7 @@ FirstScreen:
             ScrollView:
                 MDList:
                     OneLineIconListItem:
-                        text: 'Labels'
+                        text: 'Buttons'
                         on_press:
                             root.manager.transition = NoTransition()
                             root.manager.current = 'fourth'
@@ -300,12 +363,12 @@ FirstScreen:
                         text: 'back'
                         on_press:
                             root.manager.transition.direction = 'right'
-                            root.manager.current = 'third'
+                            root.manager.current = 'flayout'
                         IconLeftWidget:
                             icon: 'back.png'
                             on_press:
                                 root.manager.transition.direction = 'right'
-                                root.manager.current = 'third'
+                                root.manager.current = 'flayout'
 
 <FifthScreen>:
     name: 'fifth'
@@ -441,48 +504,72 @@ FirstScreen:
 
 <SixthScreen>:
     name: 'sixth'
+    FitImage:
+        source: 'download.jpg'
     MDBottomNavigation:
         #panel_color: "#eeeaea"
         selected_color_background: "orange"
         text_color_active: "lightgrey"
 
         MDBottomNavigationItem:
-            name: 'screen 1'
+            name: 'Navigation Rail'
             text: '1'
             icon: 'Kivy_logo.png'
-
+            FitImage:
+                source: 'download.jpg'
             MDLabel:
                 text: 'Example Screen 1'
                 halign: 'center'
+                font_size: '30sp'
+            
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: '2'
+            icon: 'Kivy_logo.png'
+            FitImage:
+                source: 'download.jpg'
+            MDFloatLayout:
+                MDLabel:
+                    text: 'Navigation Rail'
+                    font_size: '30sp'
+                    halign: 'center'
 
             MDBoxLayout:
 
                 MDNavigationRail:
 
                     MDNavigationRailItem:
+                        name: 'python'
                         text: "Python"
                         icon: "language-python"
 
                     MDNavigationRailItem:
+                        name: 'java'
                         text: "JavaScript"
                         icon: "language-javascript"
 
                     MDNavigationRailItem:
+                        name: 'c++'
                         text: "CPP"
                         icon: "language-cpp"
 
                     MDNavigationRailItem:
+                        name: 'git'
                         text: "Git"
                         icon: "git"
 
         MDBottomNavigationItem:
-            name: 'screen 2'
-            text: '2'
+            name: 'screen 3'
+            text: '3'
             icon: 'Kivy_logo.png'
+            FitImage:
+                source: 'download.jpg'
 
             MDLabel:
                 text: 'KivyMD Bottom Navigation'
                 halign: 'center'
+                font_size: '30sp'
 
             MDRoundFlatIconButton:
 
@@ -507,15 +594,123 @@ FirstScreen:
                     root.manager.transition.direction = 'right'
                     root.manager.current = 'fifth'
 
-        MDBottomNavigationItem:
-            name: 'screen 3'
-            text: '3'
-            icon: 'Kivy_logo.png'
-
-            MDLabel:
-                text: 'Example Screen 2'
-                halign: 'center'
-
 <SeventhScreen>:
     name: 'seventh'
-    
+    FitImage:
+        source: 'download.jpg'
+
+    MDFloatLayout:
+        MDLabel:
+            text: 'Progress Bar: 0%'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.85}
+
+        MDProgressBar:
+            # orientation: 'horizontal'
+            value: 0
+            size: (0.1, 0.1)
+            # size_hint: .8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+        MDLabel:
+            text: 'Progress Bar: 50%'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+
+        MDProgressBar:
+            # orientation: 'horizontal'
+            value: 50
+            size: (0.1, 0.1)
+            # size_hint: .8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+
+        MDLabel:
+            text: 'Progress Bar: 100%'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+
+        MDProgressBar:
+            # orientation: 'horizontal'
+            value: 100
+            size: (0.1, 0.1)
+            # size_hint: .8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        MDRoundFlatIconButton:
+
+            icon: 'next.png'
+            text: 'Next'
+            text_color: 'black'
+            line_color: 'black'
+            icon_color: 'black'
+            pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'eigth'
+        MDRoundFlatIconButton:
+            icon: 'back.png'
+            text: 'Back'
+            text_color: 'black'
+            line_color: 'black'
+            icon_color: 'black'
+            pos_hint: {'center_x': 0.1, 'center_y': 0.1}
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'sixth'
+
+<EigthScreen>:
+    name: 'eigth'
+    FitImage:
+        source: 'download.jpg'
+    MDLabel:
+        text: 'MDSpinner'
+        pos_hint: {'center_x': 0.95, 'center_y': 0.7}
+    MDSpinner:
+        size_hint: None, None
+        size: dp(66), dp(66)
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        active: True if check.active else False
+
+    MDCheckbox:
+        id: check
+        size_hint: None, None
+        size: dp(58), dp(58)
+        pos_hint: {'center_x': .5, 'center_y': .4}
+        active: False
+
+    MDRoundFlatIconButton:
+
+        icon: 'next.png'
+        text: 'Next'
+        text_color: 'black'
+        line_color: 'black'
+        icon_color: 'black'
+        pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+        on_release:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'end'
+    MDRoundFlatIconButton:
+        icon: 'back.png'
+        text: 'Back'
+        text_color: 'black'
+        line_color: 'black'
+        icon_color: 'black'
+        pos_hint: {'center_x': 0.1, 'center_y': 0.1}
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'seventh'
+
+<End>:
+    name: 'end'
+    FitImage:
+        source: 'download.jpg'
+    Image:
+        source: 'Kivy_logo.png'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        size_hint: (0.2, 0.2)
+    MDLabel:
+        text: 'End of Presentation'
+        halign: 'center'
+        font_size: '35sp'
+    MDLabel:
+        text: 'Onto demonstration'
+        halign: 'center'
+        font_size: '25sp'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
